@@ -100,14 +100,14 @@
                 <div class="md:flex items-center">
                   <div class="ml-4 md:ml-0">
                     <img
-                      class="w-16 h-16 lg:w-24 lg:h-24 border-4 border-midnight-sapphire border-opacity-30 rounded-lg object-cover bg-cover"
+                      class="w-16 h-16 lg:w-28 lg:h-28 border-2 border-midnight-sapphire border-opacity-30 rounded-lg object-cover bg-cover"
                       :src="item.img"
                       alt="author image"
                     />
                   </div>
                   <div class="flex-1 min-w-0 ms-4">
                     <h3
-                      class="flex items-center mb-1 text-2xl font-cormorant font-semibold text-midnight-sapphire"
+                      class="flex items-center mb-1 text-2xl font-cormorant font-semibold text-gray-800"
                     >
                       {{ item.name }}
                     </h3>
@@ -117,7 +117,7 @@
                     >
                   </div>
                   <div class="flex-1 min-w-0 ms-4">
-                    <p class="mb-4 text-base font-normal text-gray-500">
+                    <p class="mb-4 text-base font-normal text-gray-600">
                       {{ item.content }}
                     </p>
                   </div>
@@ -173,10 +173,13 @@
         </div>
       </div>
     </div>
+    <!-- Cookie Consent Popup -->
+    <CookieConsent />
   </section>
 </template>
 
 <script>
+import CookieConsent from "../components/CookieConsent.vue";
 import author1 from "@/assets/authorImage/Murshid1.jpg";
 import author2 from "@/assets/authorImage/buddhadeb.jpg";
 import author3 from "@/assets/authorImage/utpalendu.jpg";
@@ -188,15 +191,17 @@ import author8 from "@/assets/authorImage/Uma-Dasgupta.jpg";
 import author9 from "@/assets/authorImage/chanda.jpg";
 import author10 from "@/assets/authorImage/Raja.jpg";
 import author11 from "@/assets/authorImage/helal.jpg";
-import author12 from "@/assets/authorImage/debraj.jpg";
+import author12 from "@/assets/authorImage/Debraj.jpg";
 import author13 from "@/assets/authorImage/Partha.jpg";
 import author14 from "@/assets/authorImage/sreela.jpg";
 import author15 from "@/assets/authorImage/rashid.webp";
 import author16 from "@/assets/members/noimage.jpg";
 
 export default {
-  name: "AboutView",
-  components: {},
+  name: "MemoryLuminariesView",
+  components: {
+    CookieConsent,
+  },
 
   mounted() {
     window.addEventListener("resize", this.updateFiguresPerPage);
