@@ -13,11 +13,10 @@
               <h2
                 class="text-4xl md:text-5xl font-bold text-midnight-sapphire mb-6 font-cormorant"
               >
-                Welcome to Bangali Abhibashi Network: a Glocal Linguo-cultural
-                Association ,
-                <span class="italic font-bold text-amber-600"
-                  >B.A.N.G.L.A.</span
-                >
+                {{ t("welcomeMessage.start") }}
+                <span class="italic font-bold text-amber-600">{{
+                  t("welcomeMessage.end")
+                }}</span>
               </h2>
               <blockquote class="fade-in">
                 <svg
@@ -134,17 +133,30 @@
 <script>
 //import CookieConsent from "../components/CookieConsent.vue";
 
+import { loadTranslations, translate } from "../translations.js";
 export default {
   name: "HomeView",
   components: {
     //CookieConsent,
   },
   data() {
-    return {};
+    return {
+      scope: "home", // Current translation scope (folder)
+    };
+  },
+
+  async created() {
+    console.log("Created and called loadTranslations");
+    await loadTranslations(this.scope, "en"); // Load default language on creation
   },
   methods: {
     contribute() {
       this.$router.push("/contribute");
+    },
+    t(key) {
+      // console.log(key, this.scope);
+      console.log(translate(this.scope, key));
+      return translate(this.scope, key);
     },
   },
 };

@@ -56,6 +56,10 @@
                 alt="Image representing Bangla culture"
                 class="w-full h-auto object-cover rounded shadow-sm mix-blend-multiply z-10 relative opacity-95 filter brightness-90"
               />
+              <div class="text-gray-500 text-sm text-center mt-3">
+                Illustration By:
+                <span class="font-semibold">Arindaam Das</span>
+              </div>
             </div>
             <!-- Tooltip -->
             <!-- <div
@@ -119,6 +123,12 @@
                   alt="Image representing Bangla culture"
                   class="w-72 h-92 object-cover rounded shadow-sm opacity-95 filter brightness-90"
                 />
+              </div>
+              <div
+                class="text-gray-500 text-sm text-center mt-3 block lg:hidden"
+              >
+                Illustration By:
+                <span class="font-semibold">Arindaam Das</span>
               </div>
               <p class="font-light text-base text-gray-700 text-justify pt-6">
                 The recognition of
@@ -197,21 +207,16 @@
 
           <!-- Image -->
           <div class="w-full lg:w-1/2 flex justify-center">
-            <img
-              src="../assets/img/tagore.png"
-              alt="SVG Image 1"
-              class="w-96 h-auto"
-            />
-            <div
-              class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-black text-white text-sm px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              Image Credit:
-              <a
-                href="https://ca.pinterest.com/pin/14988611253363489/"
-                class="hover:underline"
-              >
-                https://ca.pinterest.com/pin/14988611253363489/
-              </a>
+            <div>
+              <img
+                src="../assets/img/tagore.png"
+                alt="SVG Image 1"
+                class="w-96 h-auto"
+              />
+              <div class="text-gray-500 text-sm text-center pt-3">
+                Illustration By:
+                <span class="font-semibold">Arindaam Das</span>
+              </div>
             </div>
           </div>
         </div>
@@ -248,21 +253,16 @@
 
           <!-- Image -->
           <div class="w-full lg:w-1/2 flex justify-center">
-            <img
-              src="../assets/img/Vector2.png"
-              alt="SVG Image 2"
-              class="w-96 h-auto"
-            />
-            <div
-              class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-black text-white text-sm px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              Image Credit:
-              <a
-                href="https://ca.pinterest.com/pin/105412447521750832/"
-                class="hover:underline"
-              >
-                https://ca.pinterest.com/pin/105412447521750832/
-              </a>
+            <div>
+              <img
+                src="../assets/img/Vector2.png"
+                alt="SVG Image 2"
+                class="w-96 h-auto"
+              />
+              <!-- <div class="text-gray-500 text-sm text-center pt-3">
+                Illustration By:
+                <span class="font-semibold">Arindaam Das</span>
+              </div> -->
             </div>
           </div>
         </div>
@@ -302,17 +302,6 @@
               alt="SVG Image 3"
               class="w-96 h-auto"
             />
-            <div
-              class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-black text-white text-sm px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              Image Credit:
-              <a
-                href="https://ca.pinterest.com/pin/311663236730020802/"
-                class="hover:underline"
-              >
-                https://ca.pinterest.com/pin/311663236730020802/
-              </a>
-            </div>
           </div>
         </div>
 
@@ -347,21 +336,16 @@
 
           <!-- Image -->
           <div class="w-full lg:w-1/2 flex justify-center">
-            <img
-              src="../assets/img/language_and_learning.png"
-              alt="SVG Image 4"
-              class="w-96 h-auto"
-            />
-            <div
-              class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-black text-white text-sm px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              Image Credit:
-              <a
-                href="https://ca.pinterest.com/pin/605945324893094181/"
-                class="hover:underline"
-              >
-                https://ca.pinterest.com/pin/605945324893094181/
-              </a>
+            <div>
+              <img
+                src="../assets/img/language_and_learning.png"
+                alt="SVG Image 4"
+                class="w-96 h-auto"
+              />
+              <div class="text-gray-500 text-sm text-center pt-3">
+                Illustration By:
+                <span class="font-semibold">Arindaam Das</span>
+              </div>
             </div>
           </div>
         </div>

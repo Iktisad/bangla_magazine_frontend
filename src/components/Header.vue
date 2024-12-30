@@ -18,49 +18,76 @@
           >B.A.N.G.L.A.</span
         >
       </h1>
+
       <div class="flex space-x-4 md:space-x-6 mt-4 md:mt-0">
-        <button class="">
-          <img
-            src="../assets/svg/facebook.svg"
-            alt="facebook"
-            class="w-8 h-8 fill-white"
-          />
-        </button>
-        <button class="">
-          <img
-            src="../assets/svg/instagram.svg"
-            alt="instagram"
-            class="w-8 h-8 fill-white"
-          />
-        </button>
-        <button class="">
-          <img
-            src="../assets/svg/youtube.svg"
-            alt="youtube"
-            class="w-8 h-8 fill-white"
-          />
-        </button>
-        <button class="">
-          <img
-            src="../assets/svg/twitter.svg"
-            alt="twitter"
-            class="w-8 h-8 fill-midnight-sapphire"
-          />
-        </button>
+        <select
+          v-model="selectedLang"
+          @change="handleLanguageChange"
+          class="block px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+        >
+          <option v-for="lang in languages" :key="lang" :value="lang">
+            {{ lang.toUpperCase() }}
+          </option>
+        </select>
+        <div class="hidden">
+          <button class="">
+            <img
+              src="../assets/svg/facebook.svg"
+              alt="facebook"
+              class="w-8 h-8 fill-white"
+            />
+          </button>
+          <button class="">
+            <img
+              src="../assets/svg/instagram.svg"
+              alt="instagram"
+              class="w-8 h-8 fill-white"
+            />
+          </button>
+          <button class="">
+            <img
+              src="../assets/svg/youtube.svg"
+              alt="youtube"
+              class="w-8 h-8 fill-white"
+            />
+          </button>
+          <button class="">
+            <img
+              src="../assets/svg/twitter.svg"
+              alt="twitter"
+              class="w-8 h-8 fill-midnight-sapphire"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import { setLanguage, loadTranslations } from "@/translations.js";
 export default {
   name: "Header",
+
   data() {
-    return {};
+    return {
+      selectedLang: "en", // Default language
+      languages: ["en", "bn", "fr"], // Language options
+    };
   },
+  watch: {
+    selectedLang: async function (newLang) {
+      await this.handleLanguageChange(newLang);
+    },
+  },
+
   methods: {
     home() {
       this.$router.push("/");
+    },
+    async handleLanguageChange(newLang) {
+      setLanguage(newLang); // Update the global language
+      await loadTranslations("common", newLang); // Preload common translations
     },
   },
 };
