@@ -54,25 +54,11 @@
                 alt="Image representing Bangla culture"
                 class="w-full h-auto object-cover rounded shadow-sm mix-blend-multiply z-10 relative opacity-95 filter brightness-90"
               />
-              <div class="text-gray-500 text-sm text-center mt-3">
+              <div class="text-gray-500 text-sm text-center pt-3">
                 Illustration By:
                 <span class="font-semibold">Arindaam Das</span>
               </div>
             </div>
-            <!-- Tooltip -->
-            <!-- <div
-              class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              Image Credit:
-              <a
-                class="hover:underline"
-                href="https://ca.pinterest.com/pin/1055599907087001/"
-                >https://ca.pinterest.com/pin/1055599907087001/</a
-              >
-              <div
-                class="absolute left-1/2 transform -translate-x-1/2 top-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-black"
-              ></div>
-            </div> -->
           </div>
 
           <!-- Right 2/3 with Content -->
@@ -115,12 +101,16 @@
                 adopted it through their mediated or lived experiences.
               </p>
               <!-- Add Image Here for Small Screens -->
-              <div class="block lg:hidden my-6 flex justify-center">
+              <div class="block lg:hidden my-6 justify-center">
                 <img
                   src="../assets/img/story.png"
                   alt="Image representing Bangla culture"
                   class="w-72 h-92 object-cover rounded shadow-sm opacity-95 filter brightness-90"
                 />
+                <div class="text-gray-500 text-sm text-center pt-3">
+                  Illustration By:
+                  <span class="font-semibold">Arindaam Das</span>
+                </div>
               </div>
               <div
                 class="text-gray-500 text-sm text-center mt-3 block lg:hidden"
@@ -251,17 +241,11 @@
 
           <!-- Image -->
           <div class="w-full lg:w-1/2 flex justify-center">
-            <div>
-              <img
-                src="../assets/img/Vector2.png"
-                alt="SVG Image 2"
-                class="w-96 h-auto"
-              />
-              <!-- <div class="text-gray-500 text-sm text-center pt-3">
-                Illustration By:
-                <span class="font-semibold">Arindaam Das</span>
-              </div> -->
-            </div>
+            <img
+              src="../assets/img/Vector2.png"
+              alt="SVG Image 2"
+              class="w-96 h-auto"
+            />
           </div>
         </div>
 
