@@ -125,7 +125,7 @@
 
       <!-- What We are Looking for -->
       <div
-        class="px-2 bg-gradient-to-r from-amber-50 to-blue-50 min-h-screen lg:pb-24 pb-10"
+        class="px-2 bg-gradient-to-r from-amber-50 to-blue-50 lg:pb-32 pb-10"
       >
         <div class="container mx-auto md:mx-auto py-5 px-4 space-y-3 lg:px-32">
           <h2 class="text-4xl md:text-6xl mb-8 text-gray-800 font-cormorant">

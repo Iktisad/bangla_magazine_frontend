@@ -37,18 +37,16 @@
 
     <!-- Who We Are -->
     <div
-      class="bg-gradient-to-r from-amber-100 to-regal-blue border border-gray-200 rounded-lg shadow"
+      class="bg-gradient-to-r from-amber-100 to-regal-blue border border-gray-200 rounded-lg shadow mb-8 md:mb-16"
     >
-      <div
-        class="mb-8 md:mb-16 pt-8 md:pt-16 py-8 px-2 mx-auto max-w-screen-xl"
-      >
+      <div class="pt-8 md:pt-16 py-8 px-2 mx-auto max-w-screen-xl">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
           <!-- Left 1/3 with Image and Tooltip -->
           <div class="lg:col-span-1 hidden lg:block relative group">
             <div class="relative">
               <!-- Background Gradient Layer -->
               <div
-                class="absolute inset-0 bg-gradient-to-r from-amber-100 to-regal-blue rounded mix-blend-multiply opacity-70 z-0"
+                class="absolute inset-0 rounded mix-blend-multiply opacity-70 z-0"
               ></div>
               <!-- Image Layer -->
               <img
@@ -78,7 +76,7 @@
           </div>
 
           <!-- Right 2/3 with Content -->
-          <div class="lg:col-span-2 mb-8 md:mb-16 pt-8 md:pt-16 py-8 px-2">
+          <div class="lg:col-span-2 mb-8 md:mb-16 pt-8 md:pt-14 py-8 px-2">
             <div class="text-center md:text-left mb-16">
               <h2
                 class="text-4xl md:text-6xl mb-8 text-gray-800 font-cormorant"
@@ -344,7 +342,7 @@
               />
               <div class="text-gray-500 text-sm text-center pt-3">
                 Illustration By:
-                <span class="font-semibold">Arindaam Das</span>
+                <span class="font-semibold">Meghomita Das</span>
               </div>
             </div>
           </div>
