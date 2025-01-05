@@ -78,7 +78,7 @@
             <!-- Section 1: Founding Board of Directors -->
             <div class="p-4">
               <h2
-                class="text-3xl text-center font-semibold text-midnight-sapphire font-cormorant mb-12 border-b-2 border-gray-300"
+                class="text-3xl lg:text-4xl text-center font-semibold text-midnight-sapphire font-cormorant mb-12"
               >
                 Founding Board of Directors
               </h2>
@@ -141,12 +141,12 @@
             <!-- Section 2: Content Sculptors -->
             <div class="mt-12 lg:mt-16 p-4">
               <h2
-                class="text-3xl text-center font-semibold text-midnight-sapphire font-cormorant mb-12 border-b-2 border-gray-300"
+                class="text-3xl lg:text-4xl text-center font-semibold text-midnight-sapphire font-cormorant mb-12"
               >
                 Founding Members
               </h2>
               <div
-                class="flex flex-wrap justify-center gap-y-12 max-w-3xl mx-auto lg:max-w-full"
+                class="flex flex-wrap justify-center gap-y-12 max-w-5xl mx-auto lg:max-w-full"
               >
                 <div
                   v-for="(member, index) in filteredTeamMembers('Member')"
@@ -332,22 +332,24 @@
 
 <script>
 import CookieConsent from "../components/CookieConsent.vue";
-import image1 from "@/assets/members/AnweshaBhattacharjee.jpeg";
-import image2 from "@/assets/members/ArchismanChaudhuri.jpeg";
-import image3 from "@/assets/members/SoubhikSamanta.jpeg";
-import image4 from "@/assets/members/urmibhakta.jpeg";
-import image5 from "@/assets/members/Saikat.jpg";
-import image6 from "@/assets/members/TrishaGhosh.jpg";
-import image7 from "@/assets/members/MoinakBanerjee.jpeg";
-import image8 from "@/assets/members/IktisadRashid.jpeg";
-import image9 from "@/assets/members/SanjanaSayeed.jpeg";
-import image10 from "@/assets/members/SomduttaMajumder.jpeg";
-import image11 from "@/assets/members/AzfarAdib.jpeg";
-import image12 from "@/assets/members/AvikChakraborty.jpg";
-import image13 from "@/assets/members/Saptara.jpeg";
-import image14 from "@/assets/members/AjnaIslam.jpeg";
-import image15 from "@/assets/members/SamiparnaChakraborty.jpg";
-import image16 from "@/assets/members/images.jpg";
+import image1 from "@/assets/members/AnweshaBhattacharjee_1.png";
+import image2 from "@/assets/members/ArchismanChaudhuri_1.png";
+import image3 from "@/assets/members/SoubhikSamanta_1.png";
+import image4 from "@/assets/members/umibhakta_1.png";
+import image5 from "@/assets/members/Saikat_2.png";
+import image6 from "@/assets/members/TrishaGhosh_2.png";
+import image7 from "@/assets/members/MoinakBanerjee_1.png";
+import image8 from "@/assets/members/IktisadRashid_1.png";
+import image9 from "@/assets/members/SanjanaSayeed_1.png";
+import image10 from "@/assets/members/SomduttaMajumder_1.png";
+import image11 from "@/assets/members/AzfarAdib_1.png";
+import image12 from "@/assets/members/Avik_1.png";
+import image13 from "@/assets/members/Saptara_1.png";
+import image14 from "@/assets/members/Ajna.png";
+import image15 from "@/assets/members/SamiparnaChakraborty_1.png";
+import image16 from "@/assets/members/images.png";
+import image17 from "@/assets/members/Ananyo.png";
+import image18 from "@/assets/members/abhijeet.png";
 export default {
   name: "TeamMemberView",
   components: {
@@ -385,32 +387,18 @@ export default {
           bio: "An historian by training, a language enthusiast, and an academic nomad. Favourite hobby is reading. At present I continually flit between working on my academic research, honing my language skills, and volunteering for BANGLA and Porijaan.",
           location: "Highland Park, New Jersey, USA",
         },
+        // {
+        //   name: "Ananyo Kazi ",
+        //   position: "Member",
+        //   image: image16,
+        //   bio: "-",
+        //   location: "Zürich, Zürich, Switzerland",
+        // },
         {
-          name: "Ananyo Kazi ",
-          position: "Member",
-          image: image16,
-          bio: "-",
-          location: "Zürich, Zürich, Switzerland",
-        },
-        {
-          name: "Anwesha Bhattacharya ",
+          name: "Anwesha Bhattacharjee ",
           position: "Member",
           image: image1,
           bio: "Journalism and content production have been Anwesha's passion for almost 20 years now, from her school years well into collegiate journalism. She hopes to contribute with her experiences both as a member of the diaspora and as a content producer toward B.A.N.G.L.A.'s mission",
-          location: "Montreal, Quebec, Canada",
-        },
-        {
-          name: "Avik Chakraborty",
-          position: "Member",
-          image: image12,
-          bio: "Currently Postdoc at UNAB, Santiago, Chile. PhD in Theoretical High Energy Physics from USC, Los Angeles, USA. JU (B.Sc.) & IIT-B (M.Sc.) alumni. Hometown Kolkata, India. . Photography and travel enthusiast. Love to read and listen to music.",
-          location: "Santiago, Santiago, Chile",
-        },
-        {
-          name: "Abhijeet Dutta",
-          position: "Member",
-          image: image16,
-          bio: "-",
           location: "Montreal, Quebec, Canada",
         },
         {
@@ -420,6 +408,21 @@ export default {
           bio: "A public scholar and PhD candidate at Concordia University.",
           location: "Montreal, Quebec, Canada",
         },
+
+        // {
+        //   name: "Abhijeet Dutta",
+        //   position: "Member",
+        //   image: image16,
+        //   bio: "-",
+        //   location: "Montreal, Quebec, Canada",
+        // },
+        {
+          name: "Avik Chakraborty",
+          position: "Member",
+          image: image12,
+          bio: "Currently Postdoc at UNAB, Santiago, Chile. PhD in Theoretical High Energy Physics from USC, Los Angeles, USA. JU (B.Sc.) & IIT-B (M.Sc.) alumni. Hometown Kolkata, India. . Photography and travel enthusiast. Love to read and listen to music.",
+          location: "Santiago, Santiago, Chile",
+        },
         {
           name: "Iktisad Rashid ",
           position: "Member",
@@ -427,20 +430,20 @@ export default {
           bio: "Current Grad Student at Concordia pursing MEng in Quality Systems Engineering.A problem solver at heart and Software engineer by profession.An Enthusiast in exploring cultures and cuisine",
           location: "Montreal, Quebec, Canada",
         },
-        {
-          name: "Ali Hossain",
-          position: "Member",
-          image: image16,
-          bio: "-",
-          location: "Montreal, Quebec, Canada",
-        },
-        {
-          name: "Yusuf Saadi",
-          position: "Member",
-          image: image16,
-          bio: "-",
-          location: "Montreal, Quebec, Canada",
-        },
+        // {
+        //   name: "Ali Hossain",
+        //   position: "Member",
+        //   image: image16,
+        //   bio: "-",
+        //   location: "Montreal, Quebec, Canada",
+        // },
+        // {
+        //   name: "Yusuf Saadi",
+        //   position: "Member",
+        //   image: image16,
+        //   bio: "-",
+        //   location: "Montreal, Quebec, Canada",
+        // },
         {
           name: "Trisha Ghosh",
           position: "Member",
@@ -448,25 +451,18 @@ export default {
           bio: "Scientist by day and artist by night. Graduate student in Synthetic Biology, at Concordia University, Montreal. ",
           location: "Montreal, Quebec, Canada",
         },
-        {
-          name: "Debapriya Mondal",
-          position: "Member",
-          image: image16,
-          bio: "-",
-          location: "Montreal, Quebec, Canada",
-        },
+        // {
+        //   name: "Debapriya Mondal",
+        //   position: "Member",
+        //   image: image16,
+        //   bio: "-",
+        //   location: "Montreal, Quebec, Canada",
+        // },
         {
           name: "Moinak Banerjee",
           position: "Member",
           image: image7,
           bio: "A student of liberal arts and humanities interested in reading, writing and debating ideas.",
-          location: "Montreal, Quebec, Canada",
-        },
-        {
-          name: "Louis-Felix Blanchet-Cohen",
-          position: "Member",
-          image: image16,
-          bio: "Lived 20 years in bangladesh where i socialized actively with bengalis every day . Of quebecois origin i define myself as bengali as i got to know bangladesh well and lived there a long time ",
           location: "Montreal, Quebec, Canada",
         },
         {
@@ -491,19 +487,29 @@ export default {
           location: "Waterloo, Ontario, Canada",
         },
         {
-          name: "Susmita Bose ",
-          position: "Member",
-          image: image16,
-          bio: "-",
-          location: "Montreal, Quebec, Canada",
-        },
-        {
           name: "Saikat ",
           position: "Member",
           image: image5,
           bio: "Civil/Structural engineer by professional training - Loves Art and Literature",
           location: "Montreal, Quebec, Canada",
         },
+
+        {
+          name: "Ananyo Kazi ",
+          position: "Member",
+          image: image17,
+          bio: "-",
+          location: "Zürich, Zürich, Switzerland",
+        },
+
+        {
+          name: "Louis-Felix Blanchet-Cohen",
+          position: "Member",
+          image: image16,
+          bio: "Lived 20 years in bangladesh where i socialized actively with bengalis every day . Of quebecois origin i define myself as bengali as i got to know bangladesh well and lived there a long time ",
+          location: "Montreal, Quebec, Canada",
+        },
+
         {
           name: "Somdutta Majumder ",
           position: "Member",
@@ -511,6 +517,42 @@ export default {
           bio: "Bengali is not just a language for me. It is my identity that I wear with pride. I am a geologist by profession, currently residing in the US, but that does not stop me from staying informed on the socio-political situation and culture of West Bengal and India.",
           location: "Jefferson City, Missouri, USA",
         },
+        {
+          name: "Abhijeet Dutta",
+          position: "Member",
+          image: image18,
+          bio: "-",
+          location: "Montreal, Quebec, Canada",
+        },
+        {
+          name: "Ali Hossain",
+          position: "Member",
+          image: image16,
+          bio: "-",
+          location: "Montreal, Quebec, Canada",
+        },
+        {
+          name: "Yusuf Saadi",
+          position: "Member",
+          image: image16,
+          bio: "-",
+          location: "Montreal, Quebec, Canada",
+        },
+        {
+          name: "Debapriya Mondal",
+          position: "Member",
+          image: image16,
+          bio: "-",
+          location: "Montreal, Quebec, Canada",
+        },
+        {
+          name: "Susmita Bose ",
+          position: "Member",
+          image: image16,
+          bio: "-",
+          location: "Montreal, Quebec, Canada",
+        },
+
         {
           name: "Soumik Ghosh",
           position: "Member",

@@ -117,9 +117,13 @@
                     >
                   </div>
                   <div class="flex-1 min-w-0 ms-4">
-                    <p class="mb-4 text-base font-normal text-gray-600">
+                    <div
+                      class="mb-4 text-base font-normal text-gray-600"
+                      v-html="item.content"
+                    ></div>
+                    <!-- <p class="mb-4 text-base font-normal text-gray-600">
                       {{ item.content }}
-                    </p>
+                    </p> -->
                   </div>
                 </div>
               </div>
@@ -195,7 +199,7 @@ import author12 from "@/assets/authorImage/Debraj.jpg";
 import author13 from "@/assets/authorImage/Partha.jpg";
 import author14 from "@/assets/authorImage/sreela.jpg";
 import author15 from "@/assets/authorImage/rashid.webp";
-import author16 from "@/assets/members/noimage.jpg";
+import author16 from "@/assets/members/images.png";
 
 export default {
   name: "MemoryLuminariesView",
@@ -262,6 +266,13 @@ export default {
           date: "1940",
           content: "Acting.",
           img: author8,
+        },
+        {
+          name: "Budheshwari Roy ",
+          birthdate: "1944(approx.) - 2024",
+          date: "~1944",
+          content: `<div class="mb-4 text-base font-normal text-gray-600">(Folk singer, Jalpaiguri) - Exponent of  <span class="italic font-serif">Mecheni Gaan </span> - traditionally sung by inhabitants residing by the banks of the River Teesta in northern Bengal; it was her family tradition - and craft; she was awarded the Thakur Panchanan Barma Puraskar in 2023 for her indefatigable efforts in promoting and disseminating <span class="italic">Mecheni Gaan</span>. An octogenarian, she passed away in 2024.</div>`,
+          img: author16,
         },
         {
           name: "Buddhadeb Bhattacharjee",
@@ -338,13 +349,6 @@ export default {
           date: "1968",
           content: "Singing - Indian Classical Music.",
           img: author15,
-        },
-        {
-          name: "Dudheswari Roy ",
-          birthdate: "????-2024",
-          date: "????",
-          content: "Noted 'Mecheni' folk artist from North Bengal.",
-          img: author16,
         },
       ],
     };
