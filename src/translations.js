@@ -1,42 +1,68 @@
+import { reactive } from "vue";
+// Static imports for JSON translations
+import homeEn from "./assets/locales/home/en.json";
+import homeBn from "./assets/locales/home/bn.json";
+import homeFr from "./assets/locales/home/fr.json";
+
+
+// Reactive state for the current language
+export const i18nState = reactive({
+    currentLanguage: "en", // Default language
+});
+
+const translationsCache = {}; // Cache for translations
+export const activeTranslations = reactive({}); // Reactive active translations
+
+
+// Static mapping of translations by page and language
 const translations = {
-    currentLang: "en", // Default language
-    loaded: {}, // Cache for loaded translations
+    home: {
+        en: homeEn,
+        bn: homeBn,
+        fr: homeFr,
+    },
 };
 
-// Load a translation file dynamically
-async function loadTranslations(scope, lang) {
-    if (translations.loaded[scope]?.[lang]) {
-        // If translations are already loaded, return them
-        return translations.loaded[scope][lang];
+// Load translations for a specific page and language
+async function loadTranslations(page, language) {
+    console.log("Attempting to load translations for:", { page, language }); // Log inputs
+
+    console.log("Translations Object:", JSON.stringify(translations, null, 2)); // Log translations structure
+
+    const cacheKey = `${page}_${language}`;
+    if (translationsCache[cacheKey]) {
+        console.log("Returning Cached Translation for:", cacheKey);
+        return translationsCache[cacheKey];
     }
 
-    try {
-        // Dynamically import the translation file
-        const module = await import(`@/assets/locales/${scope}/${lang}.json`);
-    
-        translations.loaded[scope] = {
-            ...translations.loaded[scope],
-            [lang]: module,
-        };
-    
-        return module;
-    } catch (err) {
-        console.error(`Failed to load ${lang} translations for ${scope}:`, err);
-        return {};
+    // Attempt to fetch translations
+    const translationData = translations[page]?.[language];
+    console.log("Fetched Translation Data for", cacheKey, ":", translationData);
+
+    if (!translationData) {
+        console.error(`No translations found for ${page} in ${language}`);
+        return {}; // Return empty object if translations are missing
     }
+
+    translationsCache[cacheKey] = translationData; // Cache translations
+    return translationData;
 }
 
-// Get a translation string by key
- function translate(scope, key) {
-    const lang = translations.currentLang;
-    const loadedScope = translations.loaded[scope]?.[lang];
-    console.log(loadedScope);
-    return loadedScope?.[key] || key; // Fallback to key if no translation is found
+
+// Set translations for the current page
+export async function setPageTranslations(page) {
+    console.log("Page: "+page)
+    const translations = await loadTranslations(page, i18nState.currentLanguage);
+  
+    Object.assign(activeTranslations, translations); // Update active translations reactively
 }
 
-// Change the current language
-function setLanguage(lang) {
-    translations.currentLang = lang;
+// Translate a specific key
+export function translate(key) {
+    return key.split('.').reduce((o, i) => (o ? o[i] : undefined), activeTranslations) || key;
 }
 
-export { loadTranslations, translate, setLanguage };
+// Update the current language
+export function setLanguage(language) {
+    i18nState.currentLanguage = language;
+}

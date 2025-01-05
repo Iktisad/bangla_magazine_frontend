@@ -1,5 +1,4 @@
 <template>
-  <!-- Header -->
   <header
     class="hidden md:block bg-gradient-to-r from-amber-50 to-light-blue shadow font-cormorant"
   >
@@ -14,15 +13,14 @@
         />
       </button>
       <h1 class="text-4xl md:text-4xl lg:text-6xl font-bold text-center">
-        <span class="text-midnight-sapphire text-gradient text-shadow"
-          >B.A.N.G.L.A.</span
-        >
+        <span class="text-midnight-sapphire text-gradient text-shadow">
+          B.A.N.G.L.A.
+        </span>
       </h1>
 
       <div class="flex space-x-4 md:space-x-6 mt-4 md:mt-0 relative">
         <select
-          v-model="selectedLang"
-          @change="handleLanguageChange"
+          v-model="currentLanguage"
           class="block px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
         >
           <option v-for="lang in languages" :key="lang" :value="lang">
@@ -100,31 +98,30 @@
 </template>
 
 <script>
-import { setLanguage, loadTranslations } from "@/translations.js";
+import { i18nState, setLanguage } from "@/translations.js";
+
 export default {
   name: "Header",
-
   data() {
     return {
       tooltip: null, // Initialize tooltip as null
     
-      selectedLang: "en", // Default language
-      languages: ["en", "bn", "fr"], // Language options
+      languages: ["en", "bn", "fr"], // Available languages
     };
   },
-  watch: {
-    selectedLang: async function (newLang) {
-      await this.handleLanguageChange(newLang);
+  computed: {
+    currentLanguage: {
+      get() {
+        return i18nState.currentLanguage; // Sync with global reactive state
+      },
+      set(value) {
+        setLanguage(value); // Update global language
+      },
     },
   },
-
   methods: {
     home() {
       this.$router.push("/");
-    },
-    async handleLanguageChange(newLang) {
-      setLanguage(newLang); // Update the global language
-      await loadTranslations("common", newLang); // Preload common translations
     },
     showTooltip(button) {
       this.tooltip = button; // Set the current tooltip to the button name

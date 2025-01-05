@@ -9,7 +9,7 @@
             class="flex flex-col lg:flex-row items-center justify-center lg:items-start lg:justify-start space-y-6 lg:space-y-0"
           >
             <!-- Text on Left -->
-            <div class="w-full lg:w-1/3 2xl:w-1/3 lg:mr-6">
+            <div v-if="translationsLoaded" class="w-full lg:w-1/3 2xl:w-1/3 lg:mr-6">
               <h2
                 class="text-2xl md:text-3xl 2xl:text-5xl font-bold text-midnight-sapphire mb-6 font-cormorant"
               >
@@ -45,25 +45,24 @@
                 <p
                   class="text-sm md:text-base 2xl:text-lg pl-1 sm:pl-2 mb-4 text-gray-500"
                 >
-                  We are a Canada-based Bengali diaspora committed to connecting
-                  Bengalis worldwide and promoting our rich cultural heritage.
+                  {{ $t("description") }}
                 </p>
                 <p
                   class="text-lg md:text-2xl 2xl:text-3xl font-bold text-amber-600 font-cormorant"
                 >
-                  "Bridging Distances, Celebrating Culture"
+                  {{ $t("tagline") }}
                 </p>
               </blockquote>
               <div class="flex pt-4 lg:pt-14">
                 <button
                   @click="join"
-                  class="mr-2 text-base border-2 border-yellow-400 px-4 py-2 mt-4 shadow-md bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold rounded-lg transition duration-300 ease-in-out lg:hover:bg-gradient-to-r lg:hover:from-gray-50 lg:hover:to-white lg:hover:border-honey-gold lg:hover:text-honey-gold"
+                  class="mr-2 text-base border-2 border-yellow-400 px-4 py-2 mt-4 shadow-md bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-600 font-semibold rounded-lg transition duration-300 ease-in-out lg:hover:bg-gradient-to-r lg:hover:from-gray-50 lg:hover:to-white lg:hover:border-honey-gold lg:hover:text-honey-gold"
                 >
                   Join Our Network
                 </button>
                 <button
                   @click="contribute"
-                  class="ml-2 text-base border-2 border-yellow-400 px-4 py-2 mt-4 shadow-md bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold rounded-lg transition duration-300 ease-in-out lg:hover:bg-gradient-to-r lg:hover:from-gray-50 lg:hover:to-white lg:hover:border-honey-gold lg:hover:text-honey-gold"
+                  class="ml-2 text-base border-2 border-yellow-400 px-4 py-2 mt-4 shadow-md bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-600 font-semibold rounded-lg transition duration-300 ease-in-out lg:hover:bg-gradient-to-r lg:hover:from-gray-50 lg:hover:to-white lg:hover:border-honey-gold lg:hover:text-honey-gold"
                 >
                   Contribute to the Magazine
                 </button>
@@ -188,8 +187,7 @@
 
 <script>
 import CookieConsent from "../components/CookieConsent.vue";
-
-import { loadTranslations, translate } from "../translations.js";
+import { i18nState, setPageTranslations, translate } from "@/translations.js";
 export default {
   name: "HomeView",
   components: {
@@ -197,14 +195,28 @@ export default {
   },
   data() {
     return {
-      scope: "home", // Current translation scope (folder)
+      languages: ["en", "bn", "fr"],
+      page: "home", // Explicit page scope
+      translationsLoaded: false,
     };
   },
-
-  async created() {
-    console.log("Created and called loadTranslations");
-    await loadTranslations(this.scope, "en"); // Load default language on creation
+  computed: {
+    currentLanguage() {
+      return i18nState.currentLanguage; // Access global language state
+    },
   },
+  async created() {
+    await this.loadTranslations();
+  },
+  watch: {
+    currentLanguage: {
+      immediate: true, // Watch language changes and reload translations
+      handler() {
+        this.loadTranslations();
+      },
+    },
+  },
+
   methods: {
     contribute() {
       this.$router.push("/contribute/submission-form");
@@ -212,10 +224,27 @@ export default {
     join() {
       this.$router.push("/contribute/join");
     },
-    t(key) {
-      // console.log(key, this.scope);
-      console.log(translate(this.scope, key));
-      return translate(this.scope, key);
+    async loadTranslations() {
+      console.log(
+        "Loading translations for page:",
+        this.page,
+        "and language:",
+        this.currentLanguage
+      );
+      try {
+        const translations = await setPageTranslations(this.page);
+        console.log(
+          "Loaded Translations in Home.vue:",
+          JSON.stringify(translations, null, 2)
+        );
+        this.translationsLoaded = true;
+      } catch (error) {
+        console.error("Error loading translations in Home.vue:", error);
+        this.translationsLoaded = false;
+      }
+    },
+    $t(key) {
+      return translate(key);
     },
   },
 };
