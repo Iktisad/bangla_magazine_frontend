@@ -9,15 +9,18 @@
             class="flex flex-col lg:flex-row items-center justify-center lg:items-start lg:justify-start space-y-6 lg:space-y-0"
           >
             <!-- Text on Left -->
-            <div v-if="translationsLoaded" class="w-full lg:w-1/3 2xl:w-1/3 lg:mr-6">
+            <div
+              v-if="translationsLoaded"
+              class="w-full lg:w-1/3 2xl:w-1/3 lg:mr-6"
+            >
               <h2
-                class="text-2xl md:text-3xl 2xl:text-5xl font-bold text-midnight-sapphire mb-6 font-cormorant"
+                class="text-2xl md:text-3xl 2xl:text-5xl font-bold text-midnight-sapphire mb-6"
+                :class="$t('default.font-primary')"
               >
-                Welcome to Bangali Abhibashi Network: a Glocal Linguo-cultural
-                Association,
-                <span class="italic font-bold text-amber-600"
-                  >B.A.N.G.L.A.</span
-                >
+                {{ $t("welcomeMessage.start") }}
+                <span class="italic font-bold text-amber-600">{{
+                  $t("welcomeMessage.end")
+                }}</span>
               </h2>
               <blockquote class="fade-in">
                 <svg
@@ -30,40 +33,25 @@
                     d="M22.12 145v97.65h97.65V145H70.95c0-26.92 21.9-48.82 48.82-48.82V47.35c-53.93 0-97.65 43.72-97.65 97.65zm245.76-48.82V47.35c-53.93 0-97.65 43.72-97.65 97.65v97.65h97.65V145h-48.82c-.01-26.92 21.89-48.82 48.82-48.82z"
                   ></path>
                 </svg>
-                <!-- <svg
-                  class="w-6 sm:w-8 h-6 sm:h-8 pr-2 text-honey-gold mb-2 sm:mb-4"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 18 14"
-                >
-                  <path
-                    d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"
-                  />
-                </svg> -->
 
                 <p
                   class="text-sm md:text-base 2xl:text-lg pl-1 sm:pl-2 mb-4 text-gray-500"
+                  :class="$t('default.font-secondary')"
                 >
                   {{ $t("description") }}
                 </p>
                 <p
-                  class="text-lg md:text-2xl 2xl:text-3xl font-bold text-amber-600 font-cormorant"
+                  class="text-lg md:text-2xl 2xl:text-3xl font-bold text-amber-600"
+                  :class="$t('default.font-primary')"
                 >
                   {{ $t("tagline") }}
                 </p>
               </blockquote>
               <div class="flex pt-4 lg:pt-14">
-                <button
-                  @click="join"
-                  class="mr-2 text-base border-2 border-yellow-400 px-4 py-2 mt-4 shadow-md bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-600 font-semibold rounded-lg transition duration-300 ease-in-out lg:hover:bg-gradient-to-r lg:hover:from-gray-50 lg:hover:to-white lg:hover:border-honey-gold lg:hover:text-honey-gold"
-                >
+                <button @click="join" class="mr-2 cta-btn">
                   Join Our Network
                 </button>
-                <button
-                  @click="contribute"
-                  class="ml-2 text-base border-2 border-yellow-400 px-4 py-2 mt-4 shadow-md bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-600 font-semibold rounded-lg transition duration-300 ease-in-out lg:hover:bg-gradient-to-r lg:hover:from-gray-50 lg:hover:to-white lg:hover:border-honey-gold lg:hover:text-honey-gold"
-                >
+                <button @click="contribute" class="ml-2 cta-btn">
                   Contribute to the Magazine
                 </button>
               </div>
@@ -94,36 +82,6 @@
                   Collage By:
                   <span class="font-semibold">Sanjana Sayeed </span>
                 </div>
-
-                <!-- <button
-                  @click="contribute"
-                  class="group relative mb-8 inline-flex items-center w-full overflow-hidden border-4 border-yellow-600 border-opacity-20 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl py-3 font-medium text-gray-600 shadow-md transition duration-300 ease-out hover:border-4 hover:border-double"
-                >
-                  <span
-                    class="ease absolute inset-0 flex h-full w-full -translate-x-full items-center justify-center bg-gradient-to-r from-gray-100 to-amber-50 text-gray-600 duration-300 group-hover:translate-x-0"
-                  >
-                    <svg
-                      class="h-6 w-6 fill-honey-gold"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span
-                    class="ease absolute flex h-full w-full transform items-center text-gray-700 justify-center font-semibold text-normal transition-all duration-300 group-hover:translate-x-full"
-                  >
-                    Get a Glimpse – Explore the Latest in Our Magazine...</span
-                  >
-                  <span class="invisible relative">Get Started</span>
-                </button> -->
               </div>
             </div>
           </div>
@@ -159,13 +117,10 @@
               ></path>
             </svg>
             <h2
-              class="md:text-2xl text-xl font-cormorant font-semibold text-gray-600 text-center pb-4"
+              class="md:text-2xl text-xl font-semibold text-gray-600 text-center pb-4"
+              :class="$t(`default.font-primary`)"
             >
-              Our network is set to publish an online digital magazine. We
-              sincerely hope that this magazine will begin as a trilingual
-              platform of exchanging literary and cultural forms between Bangla,
-              English, and French but eventually expand into an intersectional
-              space of multilingual and polyvocal exchange.
+              {{ $t("magazineIntro") }}
             </h2>
           </blockquote>
 
@@ -250,7 +205,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.cta-btn {
+  @apply text-base border-2 border-yellow-400 px-4 py-2 mt-4 shadow-md bg-gradient-to-r from-yellow-400 to-yellow-500 text-white font-semibold rounded-lg transition duration-300 ease-in-out lg:hover:bg-gradient-to-r lg:hover:from-gray-50 lg:hover:to-white lg:hover:border-honey-gold lg:hover:text-honey-gold;
+}
+
 .wave-divider {
   position: relative;
   top: 0;

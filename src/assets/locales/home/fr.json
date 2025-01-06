@@ -5,5 +5,7 @@
     },
     "tagline": "Relier les distances, célébrer la culture",
     "description": "Nous sommes une diaspora bengali basée au Canada engagée à connecter les Bengalis du monde entier et à promouvoir notre riche patrimoine culturel.",
-    "magazineIntro": "Notre réseau est prêt à publier un magazine numérique en ligne. Nous espérons sincèrement que ce magazine commencera comme une plateforme trilingue d'échange de formes littéraires et culturelles entre le bangla, l'anglais et le français, mais s'étendra finalement à un espace intersectionnel d'échange multilingue et polyvocal."
+    "magazineIntro": "Notre réseau est prêt à publier un magazine numérique en ligne. Nous espérons sincèrement que ce magazine commencera comme une plateforme trilingue d'échange de formes littéraires et culturelles entre le bangla, l'anglais et le français, mais s'étendra finalement à un espace intersectionnel d'échange multilingue et polyvocal.",
+    "font-primary": "font-cormorant",
+    "font-secondary": "font-roboto"
 }

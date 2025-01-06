@@ -19,77 +19,107 @@
       </h1>
 
       <div class="flex space-x-4 md:space-x-6 mt-4 md:mt-0 relative">
-        <select
-          v-model="currentLanguage"
-          class="block px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-        >
-          <option v-for="lang in languages" :key="lang" :value="lang">
-            {{ lang.toUpperCase() }}
-          </option>
-        </select>
+        <!-- Dropdown for language selection -->
+        <div class="relative w-full">
+          <select
+            v-model="currentLanguage"
+            class="block w-full px-4 py-2 pr-10 bg-white border border-gray-300 rounded-md shadow-sm appearance-none focus:ring-2 focus:ring-blue-500 outline-none focus:border-blue-500 sm:text-sm text-gray-700"
+          >
+            <option v-for="lang in languages" :key="lang" :value="lang">
+              {{ lang.toUpperCase() }}
+            </option>
+          </select>
+          <!-- Dropdown icon -->
+          <div
+            class="absolute inset-y-0 right-3 flex items-center pointer-events-none"
+          >
+            <svg
+              class="w-4 h-4 text-gray-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
+        </div>
         <div class="hidden">
           <button
-          class="relative group"
-          @mouseover="showTooltip('facebook')"
-          @mouseleave="hideTooltip"
-        >
+            class="relative group"
+            @mouseover="showTooltip('facebook')"
+            @mouseleave="hideTooltip"
+          >
             <img
               src="../assets/svg/facebook.svg"
               alt="facebook"
               class="w-8 h-8"
             />
             <div
-            v-if="tooltip === 'facebook'"
-            class="absolute bottom-full mb-2 px-2 py-1 text-sm bg-gray-800 text-white rounded"
+              v-if="tooltip === 'facebook'"
+              class="absolute bottom-full mb-2 px-2 py-1 text-sm bg-gray-800 text-white rounded"
+            >
+              Coming Soon
+            </div>
+          </button>
+
+          <button
+            class="relative group"
+            @mouseover="showTooltip('instagram')"
+            @mouseleave="hideTooltip"
           >
-            Coming Soon
-          </div>
-        </button>
-  
-        <button
-          class="relative group"
-          @mouseover="showTooltip('instagram')"
-          @mouseleave="hideTooltip"
-        >
             <img
               src="../assets/svg/instagram.svg"
               alt="instagram"
               class="w-8 h-8"
             />
             <div
-            v-if="tooltip === 'instagram'"
-            class="absolute bottom-full mb-2 px-2 py-1 text-sm bg-gray-800 text-white rounded"
-          >
-            Coming Soon
-          </div>
-        </button>
-  
-        <button
-          class="relative group"
-            @mouseover="showTooltip('youtube')"
-          @mouseleave="hideTooltip"
-          >
-          <img src="../assets/svg/youtube.svg" alt="youtube" class="w-8 h-8" />
-            <div
-            v-if="tooltip === 'youtube'"
+              v-if="tooltip === 'instagram'"
               class="absolute bottom-full mb-2 px-2 py-1 text-sm bg-gray-800 text-white rounded"
             >
-            Coming Soon
-          </div>
+              Coming Soon
+            </div>
           </button>
-  
-        <button
-          class="relative group"
-            @mouseover="showTooltip('twitter')"
-          @mouseleave="hideTooltip"
+
+          <button
+            class="relative group"
+            @mouseover="showTooltip('youtube')"
+            @mouseleave="hideTooltip"
           >
-          <img src="../assets/svg/twitter.svg" alt="twitter" class="w-8 h-8" />
+            <img
+              src="../assets/svg/youtube.svg"
+              alt="youtube"
+              class="w-8 h-8"
+            />
             <div
-            v-if="tooltip === 'twitter'"
+              v-if="tooltip === 'youtube'"
               class="absolute bottom-full mb-2 px-2 py-1 text-sm bg-gray-800 text-white rounded"
             >
-            Coming Soon
-          </div>
+              Coming Soon
+            </div>
+          </button>
+
+          <button
+            class="relative group"
+            @mouseover="showTooltip('twitter')"
+            @mouseleave="hideTooltip"
+          >
+            <img
+              src="../assets/svg/twitter.svg"
+              alt="twitter"
+              class="w-8 h-8"
+            />
+            <div
+              v-if="tooltip === 'twitter'"
+              class="absolute bottom-full mb-2 px-2 py-1 text-sm bg-gray-800 text-white rounded"
+            >
+              Coming Soon
+            </div>
           </button>
         </div>
       </div>
@@ -105,7 +135,7 @@ export default {
   data() {
     return {
       tooltip: null, // Initialize tooltip as null
-    
+
       languages: ["en", "bn", "fr"], // Available languages
     };
   },

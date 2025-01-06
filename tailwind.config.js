@@ -12,8 +12,9 @@ export default {
       fontFamily: {
         cormorant: ["Cormorant", "serif"],
         marck: ['"Marck Script"', "cursive"],
-        playfair: ["Playfair Display", "serif"],
         roboto: ["Roboto", "sans-serif"],
+        bengaliPrimary: ["Noto Serif Bengali", "serif"],
+        bengaliSecondary: ["Merriweather", "serif"]
       },
       colors: {
         "light-yellow": "#FEF9E9",
